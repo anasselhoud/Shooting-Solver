@@ -17,6 +17,7 @@ In thid part, I will explain the shooting method in a more detailed way. The sho
 
 
 The main Rayleigh Equation that we are trying to solve is written by
+
 <img src="https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png" class="center" width="350"  >
 
 
