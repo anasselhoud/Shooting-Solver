@@ -3,7 +3,7 @@ Valpha=linspace(0.06,0.9,40); %valeurs de alpha
 Vci=zeros(1,length(Valpha)); %valeurs de ci
 AlphaC=zeros(1,length(Valpha)); %valeurs de alpha*ci
 ci=0.91; %valeur initial de alpha (par le modèle approché)
-eps=0.0001; %epsilon pour la méthode de newton
+eps=0.0000001; %epsilon pour la méthode de newton
 Ru=1;
 
 
@@ -15,30 +15,50 @@ z=[zmin:p:zmax];
 
 %conditions aux limites
 Z=[zmin zmax];
-BC=[ones(1,length(A)),]
+BC=[ones(length(Valpha),1),Valpha'];
 
 
 %résolution 
-for i=1:length(A)
+for i=1:length(Valpha)
     
     
+    [Z,Y]=ode45(@(z,y) fn(z,y,ci,Valpha(i),Ru), Z, BC(i,:));
+    f = Y(length(Z),1) ; % Valeur de W3 en z=10
+    g = Y(length(Z),2) ; % Valeur de la dérivée de W3 en z=10
     
     B=g+Valpha(i)*f;
     %méthode de point fixe (g+alpha*f=0)
     while abs(B)>eps 
+        [Z,Yp]=ode45(@(z,y) fn(z,y,ci+eps,Valpha(i),Ru), Z, BC(i,:));
         
+        fp = Yp(length(Z),1) ;
+        gp = Yp(length(Z),2) ;
+        Bp=gp+Valpha(i)*fp;
         
-        c=c-B/Bp;
-        f=;
-        g=:
+        [Z,Ym]=ode45(@(z,y) fn(z,y,ci-eps,Valpha(i),Ru), Z, BC(i,:));
+        
+        fm =Ym(length(Z),1);
+        gm =Yp(length(Z),2);
+        Bm=gm+Valpha(i)*fm;
+        Bpr=(Bp-Bm)/(2*eps);
+
+        ci=ci-B/Bpr;
+        [Z,Ym]=ode45(@(z,y) fn(z,y,ci,Valpha(i),Ru), Z, BC(i,:));
+        f=Y(length(Z),1);
+        g=Y(length(Z),2);
         B=g+Valpha(i)*f;
     end
     
-    Vci(i)=c;
-    AlphaC=c*Valpha(i)
+    Vci(i)=ci;
+    AlphaC=ci*Valpha(i)
+    
+    if ci*Valpha(i)<0.05
+        break
+    end
     
 end
 
 
 %plotting results
+plot(Valpha,AlphaC)
 
