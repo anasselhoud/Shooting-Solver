@@ -60,7 +60,7 @@ for i=1:length(Valpha)
     niter=i; %for number of iteration
 end
 
-fprintf('The converengece is reached whithin %6.0f iteration \n',niter)
+fprintf('The converengece is reached whithin %4.0f iteration \n',niter)
 
 %plotting results
 plot(Valpha,AlphaC,'-x')
