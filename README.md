@@ -1,4 +1,3 @@
-https://img.shields.io/github/watchers/anasselhoud/Shooting-method-SLV?style=social
 
 # Shooting method applied to Stability of Mixture layer problem.
 
