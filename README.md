@@ -23,7 +23,7 @@ The main Rayleigh Equation that we are trying to solve is written by
 
 Applying the shooting method, the problem becomes
 
-<img src="https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png" width="350"  class="center">
+<img src="https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png" width="350" align="center" class="center">
 
 
 
