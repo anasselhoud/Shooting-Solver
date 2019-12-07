@@ -15,4 +15,6 @@ I used MAtlab R2019b  but the main methods in general should work on version R20
 ## Shooting method: An overview
 In thid part, I will explain the shooting method in a more detailed way. The shooting method consists of rewriting this boundary problem as a differential equation.
 
+![alt text](https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png "Logo Title Text 1")
+
 
