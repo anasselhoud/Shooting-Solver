@@ -33,7 +33,6 @@ for i=1:length(Valpha)
     while abs(B)>eps
 
         [Z,Yp]=ode45(@(z,y) fn(z,y,ci+eps,Valpha(i),Ru), Z,BC(i,:));
-        
         fp = Yp(end,1) ;
         gp = Yp(end,2) ;
         Bp=gp+Valpha(i)*fp;
@@ -60,8 +59,22 @@ for i=1:length(Valpha)
     niter=i; %for number of iteration
 end
 
-fprintf('The converengece is reached whithin %4.0f iteration \n',niter)
+fprintf('The convergence is achieved within %4.0f iteration \n',niter)
+
+
+
+%Modele théorique
+for i=1:length(Valpha)
+    AlphaCth(i)=(Ru/2)*sqrt(exp(-4*Valpha(i))-(2*Valpha(i)-1)^2);
+end
+
 
 %plotting results
-plot(Valpha,AlphaC,'-x')
+plot(Valpha,AlphaC,'-x','LineWidth',1)
+xlabel('Alpha')
+ylabel('Alpha*C')
+hold on
+plot(Valpha,AlphaCth,'LineWidth',1)
+legend('Numérique','Théorique')
+
 
