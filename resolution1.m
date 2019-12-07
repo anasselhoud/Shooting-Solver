@@ -23,11 +23,10 @@ BC=[ones(length(Valpha),1),Valpha'];
 
 %résolution 
 for i=1:length(Valpha)
-    a=Valpha(i);
-    IC = [1 a];
+ 
     [Z,Y]=ode45(@(z,y) fn(z,y,ci,Valpha(i),Ru), Z, BC(i,:));
-    f = Y(length(Z),1) ; % Valeur de W3 en z=10
-    g = Y(length(Z),2) ; % Valeur de la dérivée de W3 en z=10
+    f = Y(end,1) ; % Valeur de W3 en z=10
+    g = Y(end,2) ; % Valeur de la dérivée de W3 en z=10
     B=g+Valpha(i)*f;
     
     %méthode de point fixe (g+alpha*f=0)
@@ -35,14 +34,14 @@ for i=1:length(Valpha)
 
         [Z,Yp]=ode45(@(z,y) fn(z,y,ci+eps,Valpha(i),Ru), Z,BC(i,:));
         
-        fp = Yp(length(Z),1) ;
-        gp = Yp(length(Z),2) ;
+        fp = Yp(end,1) ;
+        gp = Yp(end,2) ;
         Bp=gp+Valpha(i)*fp;
         
         [Z,Ym]=ode45(@(z,y) fn(z,y,ci-eps,Valpha(i),Ru), Z, BC(i,:));
         
-        fm =Ym(length(Z),1);
-        gm =Ym(length(Z),2);
+        fm =Ym(end,1);
+        gm =Ym(end,2);
         Bm=gm+Valpha(i)*fm;
         
         Bpr=(Bp-Bm)/(2*eps);
@@ -50,22 +49,18 @@ for i=1:length(Valpha)
         ci=ci - B/Bpr;
         
         [Z,Y]=ode45(@(z,y) fn(z,y,ci,Valpha(i),Ru), Z, BC(i,:));
-        f=Y(length(Z),1);
-        g=Y(length(Z),2);
+        f=Y(end,1);
+        g=Y(end,2);
         B=g+Valpha(i)*f;
     end
     
     Vci(i)=ci;
     AlphaC(1,i)=ci*Valpha(i);
     
-    if ci*Valpha(i)<0.05
-        break
-    end
-    
-    niter=i;
+    niter=i; %for number of iteration
 end
 
-fprintf('The converengece is reached whithin %6.0f iteration /n',niter)
+fprintf('The converengece is reached whithin %6.0f iteration \n',niter)
 
 %plotting results
 plot(Valpha,AlphaC,'-x')
