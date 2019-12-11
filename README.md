@@ -25,7 +25,7 @@ The main Rayleigh Equation that we are trying to solve in this cas study is writ
 <img src="https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png" class="center" width="350"  >
 
 
-After applying our algorithm, the figure bellow compare between the numerical results and the approximative analytic solution. 
+After applying our algorithm, the figure bellow compare between the numerical results and the approximative analytic solution (which cannot predict the exact value when alpha is superior 
 
 ![alt text](https://i.ibb.co/Pc3x0Z0/untitled.png)
 
