@@ -1,7 +1,7 @@
 
 # Shooting method applied to Stability of Mixture layer problem.
 
-In this problem, we will program using Matlab and Python the Shooting method used to solving a boudary value problem (different from Cauchy problem). Our method is applied for a turbulence problem related to Fluid dynamics. 
+In this problem, we implement an algorithm based on the shooting method using Matlab and Python the Shooting method is used to solve a boudary value problem (different from Cauchy problem). Our algorithm is tested on a turbulence problem related to Fluid dynamics. 
 
 ### Install
 Download the project files (Either for Matlab or Python)
