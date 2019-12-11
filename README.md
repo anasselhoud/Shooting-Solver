@@ -28,5 +28,6 @@ Applying the shooting method, the problem becomes
 After applying our algorithme, we compare between the numerical solving and the approximative analytic solution. 
 <img src="https://i.ibb.co/Pc3x0Z0/untitled.png" width="600" align="center" class="center">
 
+![alt text](https://i.ibb.co/Pc3x0Z0/untitled.png)
 
 
