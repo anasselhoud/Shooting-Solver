@@ -13,19 +13,19 @@ I used MAtlab R2019b  but the main methods in general should work on version R20
 
 
 ## Shooting method: An overview
-In thid part, I will explain the shooting method in a more detailed way. The shooting method consists of rewriting this boundary problem as a differential equation.
+In thid part, we will explain the shooting method in a more detailed way. The shooting method consists of rewriting this boundary problem as a differential equation.
+
+The shooting method is a method for solving a boundary value problem by reducing it to a system of an initial value problem. In another way, we can say that we "shoot" out trajectories in different directions until we find a trajectory that has the desired boundary value.
+
+The impletention of this method can be done using one of the numerical methods for partial differential equations, followed by a sophisticated Fixed-point iteration which should be adapted to the principale of shooting method.
 
 
-The main Rayleigh Equation that we are trying to solve is written by
+The main Rayleigh Equation that we are trying to solve in this cas study is written by
 
 <img src="https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png" class="center" width="350"  >
-![alt text](https://i.ibb.co/HppHBBn/Capture-d-e-cran-2019-12-07-a-15-28-30.png)
-
-Applying the shooting method, the problem becomes
 
 
-
-After applying our algorithme, we compare between the numerical solving and the approximative analytic solution. 
+After applying our algorithm, the figure bellow compare between the numerical results and the approximative analytic solution. 
 
 ![alt text](https://i.ibb.co/Pc3x0Z0/untitled.png)
 
