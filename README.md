@@ -13,7 +13,7 @@ I used MAtlab R2019b  but the main methods in general should work on version R20
 
 
 ## Shooting method: An overview
-In thid part, we will explain the shooting method in a more detailed way. The shooting method consists of rewriting this boundary problem as a differential equation.
+In this first part, we will explain the shooting method in a more detailed way. The shooting method consists of rewriting the boundary problem as a differential equation.
 
 The shooting method is a method for solving a boundary value problem by reducing it to a system of an initial value problem. In another way, we can say that we "shoot" out trajectories in different directions until we find a trajectory that has the desired boundary value.
 
