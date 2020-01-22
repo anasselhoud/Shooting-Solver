@@ -12,6 +12,7 @@ You can modify the code according to the problem you are trying to solve. The co
 I used MAtlab R2019b  but the main methods in general should work on version R2014b or newer. ode45 function requires version R2016a or newer. Some of the plot decorations require newer versions that support structure properties in figures. 
 
 ### Python version
+Pending.  
 
 ## Shooting method: An overview
 In this first part, we will explain the shooting method in a more detailed way. The shooting method consists of rewriting the boundary problem as a differential equation.
